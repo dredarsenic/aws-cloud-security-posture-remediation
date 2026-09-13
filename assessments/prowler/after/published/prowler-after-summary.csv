@@ -1,0 +1,12 @@
+PROJECT_FINDING,CHECK_ID,SERVICE,PROWLER_SEVERITY,STATUS,VALIDATION_NOTE
+IAM-001,iam_user_administrator_access_policy,iam,CRITICAL,REMOVED,"The intentionally overprivileged cloudsec-lab-admin project identity was deleted. Prowler returned no post-remediation rows for that identity. Unrelated account IAM users remain outside project scope."
+IAM-001,iam_user_mfa_enabled_console_access,iam,HIGH,REMOVED,"The console-enabled cloudsec-lab-admin project identity was deleted rather than retained without MFA. Unrelated account IAM findings are documented separately as residual account-level risk."
+S3-001,s3_bucket_public_access,s3,CRITICAL,PASS,"Prowler confirmed that the hardened project S3 bucket is not publicly accessible."
+S3-001,s3_bucket_level_public_access_block,s3,HIGH,PASS,"Prowler confirmed Block Public Access is enabled on the hardened project S3 bucket."
+NET-001,ec2_instance_port_ssh_exposed_to_internet,ec2,CRITICAL,PASS,"Prowler confirmed the active secure EC2 workload does not expose TCP/22 to the Internet."
+NET-001,ec2_securitygroup_allow_ingress_from_internet_to_tcp_port_22,ec2,HIGH,PASS,"Prowler confirmed the secure web security group does not allow Internet ingress to TCP/22."
+EC2-001,ec2_instance_imdsv2_enabled,ec2,HIGH,PASS,"Prowler confirmed IMDSv2 is required on the active secure EC2 workload."
+EC2-002,ec2_ebs_volume_encryption,ec2,HIGH,PASS,"Prowler confirmed the replacement workload EBS volume is encrypted."
+EC2-002,ec2_ebs_default_encryption,ec2,HIGH,PASS,"Prowler confirmed EBS encryption by default is enabled in the assessment Region."
+LOG-001,cloudtrail_multi_region_enabled,cloudtrail,HIGH,PASS,"Prowler confirmed the customer-managed CloudTrail trail is multi-Region and actively logging."
+DET-001,accessanalyzer_enabled,accessanalyzer,LOW,PASS,"Prowler confirmed the account-level IAM Access Analyzer is enabled."
