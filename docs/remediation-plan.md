@@ -24,7 +24,7 @@ The existing AWS environment will be remediated using the existing Terraform sta
 
 ---
 
-## IAM-001 — Privileged Human Identity
+## IAM-001; Privileged Human Identity
 
 ### Baseline
 
@@ -46,7 +46,7 @@ The operator identity used to execute Terraform is outside the workload architec
 
 ---
 
-## S3-001 — Public Object Storage
+## S3-001; Public Object Storage
 
 ### Baseline
 
@@ -71,7 +71,7 @@ The harmless demonstration object may remain in the bucket so that post-remediat
 
 ---
 
-## NET-001 — Internet-Exposed SSH
+## NET-001; Internet-Exposed SSH
 
 ### Baseline
 
@@ -93,7 +93,7 @@ The web workload may remain publicly reachable on TCP/80 because public HTTP acc
 
 ---
 
-## EC2-001 — IMDSv2 Not Enforced
+## EC2-001; IMDSv2 Not Enforced
 
 ### Baseline
 
@@ -111,7 +111,7 @@ The metadata endpoint will remain enabled because AWS services and instance soft
 
 ---
 
-## EC2-002 — Unencrypted Root Storage
+## EC2-002; Unencrypted Root Storage
 
 ### Baseline
 
@@ -129,7 +129,7 @@ Regional EBS encryption by default will also be enabled in `us-east-1` so that f
 
 ---
 
-## LOG-001 — Durable Audit Logging
+## LOG-001; Durable Audit Logging
 
 ### Baseline
 
@@ -152,7 +152,7 @@ CloudTrail management-event logging will provide durable audit evidence for inci
 
 ---
 
-## DET-001 — Limited Security Detection
+## DET-001; Limited Security Detection
 
 ### Baseline
 

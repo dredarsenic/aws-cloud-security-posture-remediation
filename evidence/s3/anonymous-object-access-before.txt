@@ -1,6 +1,10 @@
   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
                                  Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0100    196 100    196   0      0    140      0   00:01   00:01              0100    196 100    196   0      0    140      0   00:01   00:01              0100    196 100    196   0      0    140      0   00:01   00:01              0
+
+  0      0   0      0   0      0      0      0                              0
+100    196 100    196   0      0    140      0   00:01   00:01              0
+100    196 100    196   0      0    140      0   00:01   00:01              0
+100    196 100    196   0      0    140      0   00:01   00:01              0
 HTTP/1.1 200 OK
 x-amz-id-2: <REDACTED>
 x-amz-request-id: <REDACTED>

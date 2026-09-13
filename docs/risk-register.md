@@ -31,7 +31,7 @@ Scanner severity ratings were treated as assessment inputs rather than accepted 
 
 ## Risk Analysis
 
-### IAM-001 — Privileged IAM User Without MFA
+### IAM-001; Privileged IAM User Without MFA
 
 The lab administrator has interactive console access and the AWS-managed `AdministratorAccess` policy. No MFA device is configured.
 
@@ -46,7 +46,7 @@ The combination of reusable password authentication, unrestricted administrative
 
 ---
 
-### S3-001 — Public S3 Object Access
+### S3-001; Public S3 Object Access
 
 The lab S3 bucket permits `s3:GetObject` to `Principal: "*"`, bucket-level Block Public Access protections are disabled, and anonymous HTTP access to the demonstration object returned HTTP 200.
 
@@ -62,7 +62,7 @@ This represents confirmed exposure rather than a theoretical configuration weakn
 
 ---
 
-### NET-001 — Internet-Exposed SSH
+### NET-001; Internet-Exposed SSH
 
 The EC2 security group permits TCP/22 from `0.0.0.0/0`, and external TCP reachability was independently confirmed.
 
@@ -76,7 +76,7 @@ This does not mean the EC2 instance has been compromised. SSH authentication rem
 
 ---
 
-### LOG-001 — Insufficient Durable Audit Logging
+### LOG-001; Insufficient Durable Audit Logging
 
 CloudTrail Event History provides recent management-event visibility, but the baseline contains no customer-managed CloudTrail trail and no CloudTrail Lake event data store.
 
@@ -92,7 +92,7 @@ The environment therefore lacks a durable audit architecture suitable for long-t
 
 ---
 
-### EC2-001 — IMDSv2 Not Enforced
+### EC2-001; IMDSv2 Not Enforced
 
 The EC2 instance is configured with:
 
@@ -109,7 +109,7 @@ The configuration does not itself expose credentials remotely. Risk becomes mate
 
 ---
 
-### EC2-002 — Unencrypted EBS Root Volume
+### EC2-002; Unencrypted EBS Root Volume
 
 The EC2 root volume is not encrypted and regional EBS encryption by default is disabled.
 
@@ -123,7 +123,7 @@ The volume is not directly Internet accessible, so its immediate exploitability 
 
 ---
 
-### DET-001 — Limited AWS-Native Detection
+### DET-001; Limited AWS-Native Detection
 
 The baseline assessment found no configured IAM Access Analyzer, while GuardDuty and Security Hub were unavailable without enabling/subscribing to the services in the assessed account.
 
@@ -156,9 +156,9 @@ This does not create a direct compromise path, but it reduces visibility and inc
 
 The project distinguishes between:
 
-- **Exposure** — a resource or service is reachable or accessible
-- **Exploitability** — an attacker has a practical path to abuse the weakness
-- **Compromise** — unauthorized access or control has actually occurred
-- **Business impact** — the potential consequence if exploitation succeeds
+- **Exposure**; a resource or service is reachable or accessible
+- **Exploitability**; an attacker has a practical path to abuse the weakness
+- **Compromise**; unauthorized access or control has actually occurred
+- **Business impact**; the potential consequence if exploitation succeeds
 
 No finding is described as a successful compromise unless evidence demonstrates that compromise occurred.
