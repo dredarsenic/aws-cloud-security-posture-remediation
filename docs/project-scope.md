@@ -78,3 +78,9 @@ No production systems, customer information, employer resources, real credential
 Any intentionally exposed resources contain only harmless test data.
 
 The purpose of the insecure configuration is defensive security assessment, validation, remediation, and security engineering.
+
+## Risk Register
+
+The finalized insecure-baseline findings, severity rationale, business impact, and remediation priorities are documented in [`risk-register.md`](risk-register.md).
+
+The risk register is frozen before remediation so that post-remediation results can be compared against the same baseline criteria.
