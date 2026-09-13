@@ -52,3 +52,8 @@ output "public_demo_object_url" {
   description = "URL of the harmless demonstration object"
   value       = "https://${aws_s3_bucket.public_lab.bucket}.s3.${var.aws_region}.amazonaws.com/${aws_s3_object.demo_file.key}"
 }
+
+output "insecure_admin_user_name" {
+  description = "Name of the intentionally overprivileged IAM lab user"
+  value       = aws_iam_user.insecure_admin.name
+}
