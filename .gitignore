@@ -50,3 +50,6 @@ prowler-output/
 
 # Unsanitized cloud security scanner reports
 /assessments/prowler/*/raw/
+
+# Unsanitized ScoutSuite assessment reports
+/assessments/scoutsuite/*/raw/

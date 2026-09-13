@@ -1,0 +1,6 @@
+PROJECT_FINDING,SCOUTSUITE_FINDING_ID,SERVICE,SCOUT_LEVEL,PROJECT_SEVERITY,STATUS,DESCRIPTION,VALIDATION_NOTE
+IAM-001,iam-managed-policy-allows-full-privileges,iam,danger,CRITICAL,FAIL,"Managed Policy Allows All Actions","Corroborates unrestricted administrative privilege. Manual IAM evidence ties AdministratorAccess to the intentionally overprivileged lab user."
+IAM-001,iam-user-without-mfa,iam,danger,HIGH,FAIL,"User without MFA","ScoutSuite detected IAM users without MFA. Manual validation confirms that the intentionally created lab administrator has console access without MFA."
+S3-001,s3-bucket-world-Get-policy,s3,danger,CRITICAL,FAIL,"Get Actions Authorized to All Principals","Corroborates public object-read exposure. Manual anonymous HTTP validation returned HTTP 200 for the harmless demonstration object."
+NET-001,ec2-security-group-opens-SSH-port-to-all,ec2,danger,CRITICAL,FAIL,"Security Group Opens SSH Port to All","Corroborates Internet exposure of TCP/22 through a security-group rule permitting 0.0.0.0/0."
+LOG-001,cloudtrail-not-configured,cloudtrail,danger,HIGH,FAIL,"CloudTrail Service Not Configured","Corroborates absence of a durable customer-managed CloudTrail trail. CloudTrail Event History remains available and is documented separately."
