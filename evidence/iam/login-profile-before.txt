@@ -1,0 +1,7 @@
+{
+    "LoginProfile": {
+        "UserName": "cloudsec-lab-admin",
+        "CreateDate": "2026-09-13T09:24:49+00:00",
+        "PasswordResetRequired": false
+    }
+}
