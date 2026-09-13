@@ -42,3 +42,13 @@ output "insecure_security_group_id" {
   description = "Security group attached to the intentionally insecure EC2 workload"
   value       = aws_security_group.insecure_web.id
 }
+
+output "public_bucket_name" {
+  description = "Name of the intentionally public S3 lab bucket"
+  value       = aws_s3_bucket.public_lab.id
+}
+
+output "public_demo_object_url" {
+  description = "URL of the harmless demonstration object"
+  value       = "https://${aws_s3_bucket.public_lab.bucket}.s3.${var.aws_region}.amazonaws.com/${aws_s3_object.demo_file.key}"
+}
