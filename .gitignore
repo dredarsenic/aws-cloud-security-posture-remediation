@@ -47,3 +47,6 @@ prowler-output/
 
 # Unsanitized runtime security evidence
 /evidence/raw/
+
+# Unsanitized cloud security scanner reports
+/assessments/prowler/*/raw/

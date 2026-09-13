@@ -1,0 +1,10 @@
+PROJECT_FINDING,PROWLER_CHECK_ID,SERVICE,SEVERITY,STATUS,CHECK_TITLE,REGION,VALIDATION_NOTE
+IAM-001,iam_user_administrator_access_policy,iam,CRITICAL,FAIL,IAM user does not have AdministratorAccess policy attached,us-east-1,Prowler detected AdministratorAccess attached to the intentionally overprivileged lab IAM user.
+IAM-001,iam_user_mfa_enabled_console_access,iam,HIGH,FAIL,IAM user has MFA enabled for console access or no console password is set,us-east-1,Prowler detected console access without MFA for the lab IAM user.
+S3-001,s3_bucket_public_access,s3,CRITICAL,FAIL,S3 bucket is not publicly accessible to Everyone or Authenticated Users,us-east-1,Prowler detected that the lab S3 bucket is publicly accessible.
+S3-001,s3_bucket_level_public_access_block,s3,HIGH,FAIL,S3 bucket has Block Public Access with IgnorePublicAcls and RestrictPublicBuckets enabled at bucket or account level,us-east-1,Prowler detected insufficient bucket-level Block Public Access protection.
+NET-001,ec2_instance_port_ssh_exposed_to_internet,ec2,CRITICAL,FAIL,EC2 instance does not allow ingress from the Internet to TCP port 22 (SSH),us-east-1,Prowler detected that the lab EC2 instance exposes TCP/22 to the Internet.
+NET-001,ec2_securitygroup_allow_ingress_from_internet_to_tcp_port_22,ec2,HIGH,FAIL,Security group does not allow ingress from 0.0.0.0/0 or ::/0 to TCP port 22 (SSH),us-east-1,Prowler detected a security-group rule permitting Internet ingress to SSH.
+EC2-001,ec2_instance_imdsv2_enabled,ec2,HIGH,FAIL,EC2 instance requires IMDSv2 or has the instance metadata service disabled,us-east-1,Prowler detected that IMDSv2 is not required on the lab EC2 instance.
+LOG-001,cloudtrail_multi_region_enabled,cloudtrail,HIGH,FAIL,Region has at least one CloudTrail trail logging,us-east-1,Prowler detected that no qualifying multi-Region CloudTrail trail is configured.
+DET-001,accessanalyzer_enabled,accessanalyzer,LOW,FAIL,IAM Access Analyzer is enabled,us-east-1,Prowler detected that IAM Access Analyzer is not enabled.
