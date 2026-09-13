@@ -605,6 +605,39 @@ That distinction is central to real-world cloud security engineering.
 
 ---
 
+## Lab Teardown and Resource Lifecycle
+
+After completion of the post-remediation assessments and evidence collection, the temporary AWS lab infrastructure was destroyed to avoid unnecessary ongoing cloud costs.
+
+The final Terraform destroy operation removed **23 project-managed resources**, including:
+
+- the EC2 demonstration workload;
+- VPC, subnet, route table, Internet gateway, and security group;
+- the project S3 bucket;
+- the CloudTrail trail and dedicated audit-log bucket;
+- the EC2 Systems Manager instance profile and IAM role;
+- supporting S3 security and lifecycle resources.
+
+Post-destroy validation confirmed:
+
+- no project-managed infrastructure resources remained in Terraform state;
+- the project VPC had been removed;
+- the project EC2 workload reached the `terminated` state;
+- the project CloudTrail trail had been removed.
+
+Two beneficial account-level security controls were deliberately preserved:
+
+- **EBS encryption by default in `us-east-1` remained enabled**;
+- **IAM Access Analyzer remained active**.
+
+These controls were removed from the project's Terraform state before destruction so teardown of the temporary lab would not weaken the AWS account's security posture.
+
+A pre-destroy Terraform state backup was retained outside the Git repository with restricted filesystem permissions for recovery and historical reference.
+
+The Terraform source code remains in the repository so the architecture, security controls, assessment process, and remediation methodology remain reproducible.
+
+---
+
 ## Supporting Documentation
 
 - [`project-scope.md`](project-scope.md)

@@ -55,6 +55,7 @@ The goal is not to produce a perfect CSPM score. The goal is to demonstrate that
 | Post-remediation manual validation | Complete |
 | Prowler post-remediation assessment | Complete |
 | ScoutSuite post-remediation assessment | Complete |
+| Lab teardown | Complete |
 | Final secure architecture diagram | Pending |
 | Final residual-risk review | Pending |
 
