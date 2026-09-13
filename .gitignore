@@ -1,0 +1,46 @@
+# Terraform runtime files
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Terraform variable files that may contain secrets
+terraform.tfvars
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Terraform overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Keys and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+.env
+.env.*
+credentials
+secrets.*
+
+# AWS local credentials
+.aws/
+
+# ScoutSuite generated reports
+scoutsuite-report/
+scoutsuite-results/
+
+# Prowler generated reports
+prowler-output/
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
