@@ -154,6 +154,36 @@ The insecure configuration exists only for controlled security assessment and mu
 
 ---
 
+
+## Secure Remediated Architecture
+
+The final hardened architecture implements the preventive, detective, and audit controls introduced during remediation.
+
+![Secure AWS baseline architecture](docs/diagrams/secure-baseline-architecture.png)
+
+The hardened environment includes:
+
+- no public SSH access;
+- AWS Systems Manager for administrative access;
+- IMDSv2 enforcement;
+- encrypted EC2 root EBS storage;
+- EBS encryption by default in `us-east-1`;
+- S3 Block Public Access;
+- S3 versioning and server-side encryption;
+- TLS-only S3 access;
+- multi-Region CloudTrail with log-file validation;
+- dedicated CloudTrail log storage;
+- IAM Access Analyzer;
+- Terraform-managed infrastructure.
+
+The architecture represents the remediated project workload. Account-wide residual risks documented in the final assessment remain outside the diagram's project scope.
+
+Detailed closure analysis:
+
+[`docs/final-assessment.md`](docs/final-assessment.md)
+
+---
+
 ## Risk Register
 
 Seven primary project risks were selected for remediation.
