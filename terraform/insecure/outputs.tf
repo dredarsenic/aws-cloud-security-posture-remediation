@@ -27,3 +27,18 @@ output "availability_zone" {
   description = "Availability Zone selected for the lab"
   value       = aws_subnet.public.availability_zone
 }
+
+output "insecure_instance_id" {
+  description = "Instance ID of the intentionally insecure EC2 workload"
+  value       = aws_instance.insecure_web.id
+}
+
+output "insecure_instance_public_ip" {
+  description = "Public IPv4 address of the intentionally insecure EC2 workload"
+  value       = aws_instance.insecure_web.public_ip
+}
+
+output "insecure_security_group_id" {
+  description = "Security group attached to the intentionally insecure EC2 workload"
+  value       = aws_security_group.insecure_web.id
+}
