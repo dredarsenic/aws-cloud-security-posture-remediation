@@ -1,0 +1,9 @@
+------------------------------------------------------------
+|                      DescribeTrails                      |
++-----------------------------+----------------------------+
+|  HomeRegion                 |  us-east-1                 |
+|  IncludeGlobalServiceEvents |  True                      |
+|  IsMultiRegionTrail         |  True                      |
+|  LogFileValidationEnabled   |  True                      |
+|  Name                       |  cloudsec-lab-audit-trail  |
++-----------------------------+----------------------------+

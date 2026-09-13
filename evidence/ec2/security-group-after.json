@@ -1,0 +1,10 @@
+[
+    {
+        "FromPort": 80,
+        "ToPort": 80,
+        "Protocol": "tcp",
+        "CIDRs": [
+            "0.0.0.0/0"
+        ]
+    }
+]

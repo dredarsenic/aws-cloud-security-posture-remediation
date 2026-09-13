@@ -1,0 +1,6 @@
+TCP/22 external reachability test: Connection timed out
+
+Result:
+Public SSH is no longer reachable after remediation.
+
+The public IP and DNS name used during runtime validation have been omitted from published evidence.

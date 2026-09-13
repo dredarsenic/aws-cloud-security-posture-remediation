@@ -1,0 +1,2 @@
+
+aws: [ERROR]: An error occurred (NoSuchEntity) when calling the GetUser operation: The user with name cloudsec-lab-admin cannot be found.
