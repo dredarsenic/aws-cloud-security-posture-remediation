@@ -125,7 +125,7 @@ This requires instance replacement because encryption cannot be enabled directly
 
 The workload is disposable and contains no production or customer data, making controlled replacement appropriate for this lab.
 
-Regional EBS encryption-by-default will be evaluated separately because it changes an account-level regional control rather than only the project workload.
+Regional EBS encryption by default will also be enabled in `us-east-1` so that future EBS volumes are encrypted automatically unless explicitly configured otherwise.
 
 ---
 
