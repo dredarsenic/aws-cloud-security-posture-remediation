@@ -1,0 +1,10 @@
+----------------------------------------
+|            DescribeVolumes           |
++------------+-------------------------+
+|  Encrypted |  False                  |
+|  KmsKeyId  |  None                   |
+|  SizeGiB   |  8                      |
+|  State     |  in-use                 |
+|  Type      |  gp3                    |
+|  VolumeId  |  <REDACTED_VOLUME_ID>  |
++------------+-------------------------+
