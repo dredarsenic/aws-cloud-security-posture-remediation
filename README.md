@@ -54,7 +54,7 @@ The goal is not to produce a perfect CSPM score. The goal is to demonstrate that
 | Terraform remediation | Complete |
 | Post-remediation manual validation | Complete |
 | Prowler post-remediation assessment | Complete |
-| ScoutSuite post-remediation assessment | In progress |
+| ScoutSuite post-remediation assessment | Complete |
 | Final secure architecture diagram | Pending |
 | Final residual-risk review | Pending |
 
@@ -411,27 +411,31 @@ The intentionally vulnerable project IAM user was deleted during remediation, so
 
 ## ScoutSuite Assessment
 
-ScoutSuite provides a second independent security assessment.
+Both baseline and post-remediation assessments were performed with **ScoutSuite 5.14.0**.
 
-The baseline assessment confirmed multiple project risks, including:
+ScoutSuite independently corroborated several of the project's primary security transitions.
 
-- IAM managed policy allowing full privileges
-- IAM user without MFA
-- world-readable S3 access through bucket policy
-- security group exposing SSH to the Internet
-- CloudTrail not configured
-- unencrypted EBS storage
-- EBS encryption by default disabled
+| Project Finding | ScoutSuite Rule | Before | After | Outcome |
+|---|---|---|---|---|
+| IAM-001 | `iam-managed-policy-allows-full-privileges` | 1 flagged | 1 flagged | Project identity removed; account-level residual remains |
+| IAM-001 | `iam-user-without-mfa` | 2 flagged | 1 flagged | Project identity removed; account-level residual remains |
+| S3-001 | `s3-bucket-world-Get-policy` | 1 flagged | 0 flagged | Remediated |
+| NET-001 | `ec2-security-group-opens-SSH-port-to-all` | 1 flagged | 0 flagged | Remediated |
+| LOG-001 | `cloudtrail-not-configured` | 1 flagged | 0 flagged | Remediated |
+| EC2-002 | `ec2-ebs-volume-not-encrypted` | 1 flagged | 0 flagged | Remediated |
+| EC2-002 | `ec2-ebs-default-encryption-disabled` | 1 of 1 checked | 16 of 17 checked | `us-east-1` remediated; account-wide residual remains |
 
-The post-remediation ScoutSuite assessment is currently in progress.
+The intentionally vulnerable `cloudsec-lab-admin` identity appeared in the baseline ScoutSuite dataset and no longer appears after remediation.
 
-Sanitized ScoutSuite material is maintained under:
+The EBS default-encryption result requires regional context. Direct AWS validation confirms the control is enabled in the project's primary Region, `us-east-1`, while sixteen other queried Regions still have the account-level default disabled. This is retained as residual governance risk rather than hidden behind a project-level PASS.
 
-```text
-assessments/scoutsuite/
-```
+Detailed comparison:
 
-Scanner findings that refer to unrelated account-wide resources are kept separate from the project risk register.
+[`assessments/scoutsuite/scoutsuite-before-after.md`](assessments/scoutsuite/scoutsuite-before-after.md)
+
+Sanitized post-remediation results:
+
+[`assessments/scoutsuite/after/published/README.md`](assessments/scoutsuite/after/published/README.md)
 
 ---
 
@@ -544,6 +548,9 @@ The strongest conclusions are those supported by more than one independent valid
 ---
 
 ## Residual Risk
+
+The post-remediation ScoutSuite assessment also identified an account-wide governance gap: EBS encryption by default is enabled in the project's primary Region (`us-east-1`) but remains disabled in sixteen other queried Regions. The project workload is therefore remediated for EC2-002, while multi-Region encryption-by-default enforcement remains a residual account-level risk.
+
 
 Not every AWS account-level issue is modified by this project.
 
