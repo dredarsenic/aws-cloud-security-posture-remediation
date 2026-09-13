@@ -44,3 +44,6 @@ prowler-output/
 # IDE files
 .vscode/
 .idea/
+
+# Unsanitized runtime security evidence
+/evidence/raw/

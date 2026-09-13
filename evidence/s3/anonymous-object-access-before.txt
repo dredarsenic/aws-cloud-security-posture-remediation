@@ -1,0 +1,21 @@
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100    196 100    196   0      0    140      0   00:01   00:01              0100    196 100    196   0      0    140      0   00:01   00:01              0100    196 100    196   0      0    140      0   00:01   00:01              0
+HTTP/1.1 200 OK
+x-amz-id-2: <REDACTED>
+x-amz-request-id: <REDACTED>
+Date: Sun, 13 Sep 2026 09:11:23 GMT
+Last-Modified: Sun, 13 Sep 2026 09:01:53 GMT
+ETag: "a083a867b1b9144dd21e37055077b904"
+x-amz-server-side-encryption: AES256
+x-amz-version-id: null
+Accept-Ranges: bytes
+Content-Type: text/plain
+Content-Length: 196
+Server: AmazonS3
+
+AWS Cloud Security Posture Remediation Lab
+
+This file contains no real, confidential, customer, or production data.
+
+It exists only to demonstrate an intentionally misconfigured public S3 object.
